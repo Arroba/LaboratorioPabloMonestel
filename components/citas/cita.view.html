@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bancoStyle.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <title>Solicitud de Citas</title>
+    <link rel="stylesheet" href="css/normalize.css">
+  </head>
+  <body>
+    <section ng-controller = 'citaController as ctrl'>
+
+      <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 center">
+        <h1>Solicitud de Citas</h1>
+      </div>
+
+      <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" id="border">
+      </div>
+
+
+      <form class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 form">
+
+        <div class="form-group">
+          <h1>Solicitud de nueva cita</h1>
+        </div>
+
+        <div class="form-group">
+          <label for="">Cédula del Usuario:</label>
+          <input type="text" ng-model="ctrl.id" class="form-control">
+        </div>
+
+<!--ng-model enlaza al objeto con el valor del input por ejemplo userCtrl.name está llamado por un ng-model  -->
+
+        <div class="form-group">
+          <label for="">Descripción:</label>
+          <input type="text" ng-model="ctrl.descripcion" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          <label for="">Fecha</label>
+          <input type="date" ng-model="ctrl.fecha" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="">Hora</label>
+          <input type="time" ng-model="ctrl.hora" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          <input class=" btn-danger col-xs-12  col-sm-12  col-md-12" id="submit" type="submit" value="Enviar Solicitud" ng-click=ctrl.save()>
+        </div>
+      </form>
+
+
+      <table class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 " id="tblRegistro">
+        <thead class="row"id="tblRegistro">
+          <tr>
+            <th class="col-xs-2 text-center">Cédula</th>
+            <th class="col-xs-2 text-center">Descripción</th>
+            <th class="col-xs-2 text-center">Fecha</th>
+            <th class="col-xs-2 text-center">Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='cita in ctrl.citas' id="info">
+            <td class="col-xs-2">{{cita.id}}</td>
+            <td class="col-xs-2">{{cita.descripcion}}</td>
+            <td class="col-xs-2">{{cita.fecha | date: 'dd-MM-yyyy'}}</td>
+            <td class="col-xs-2">{{cita.hora | date:'shortTime'}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <script src="vendor/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+
+    <script src="components/citas/cita.controller.js"></script>
+    <script src="components/citas/cita.service.js"></script>
+
+
+  </body>
+</html>
