@@ -79,7 +79,7 @@
             <td class="col-xs-2">{{cita.fecha | date: 'dd-MM-yyyy'}}</td>
             <td class="col-xs-2">{{cita.hora | date:'shortTime'}}</td>
             <td><input class="btn btn-info table" type="submit" value="Aceptar" ng-click="ctrl.aprobacion(cita)"></td>
-            <td><input class="btn btn-danger table" type="submit" value="Rechazar" ng-click="ctrl.remove(cita)"></td>
+            <td><input class="btn btn-danger table" type="submit" value="Rechazar" ng-click="ctrl.remover(cita)"></td>
           </tr>
         </tbody>
       </table>

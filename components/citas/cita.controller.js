@@ -57,6 +57,18 @@
 
       }// Cierre de la funcion aprobación
 
+      citaCtrl.remover = function(cita){
+        var listaUsuarios = citaService._getCitas();
+        if (cita.estado = 'en Revision') {
+          if (true) {
+
+          }// cierre del inf par el ciclo
+          cita.estado = 'rechazadas';
+        }// cierre del if principal
+
+      }// Cierre de la funcion aprobación
+
+
 
     }
 
