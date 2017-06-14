@@ -1,9 +1,8 @@
 ﻿(function () {
     'use strict';
-
     angular
-        .module('app')
-        .factory('UserService', UserService);
+    .module('myApp')
+    .factory('UserService', UserService);
 
     UserService.$inject = ['$http'];
     function UserService($http) {

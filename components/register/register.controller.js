@@ -1,9 +1,8 @@
 ﻿(function () {
     'use strict';
-
     angular
-        .module('app')
-        .controller('RegisterController', RegisterController);
+    .module('myApp')
+    .controller('RegisterController', RegisterController);
 
     RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
     function RegisterController(UserService, $location, $rootScope, FlashService) {
@@ -17,7 +16,7 @@
                 .then(function (response) {
                     if (response.success) {
                         FlashService.Success('Registration successful', true);
-                        $location.path('/login');
+                        $location.path('/iniciarSesion');
                     } else {
                         FlashService.Error(response.message);
                         vm.dataLoading = false;

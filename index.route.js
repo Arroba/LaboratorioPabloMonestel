@@ -11,19 +11,19 @@
     $stateProvider
       .state('login',{
         url : '/iniciarSesion',
-        templateUrl: 'components/login/login.view.html',
+        templateUrl: './components/login/login.view.html',
         controller: 'LoginController',
         controllerAs: 'vm'
       })
       .state('perfil',{
         url: '/perfil',
-        templateUrl: 'components/home/home.view.html',
+        templateUrl: './components/home/home.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
       .state('registro', {
         url : '/register',
-        templateUrl: 'components/register/register.view.html',
+        templateUrl: './components/register/register.view.html',
         controller: 'RegisterController',
         controllerAs: 'vm'
       })
