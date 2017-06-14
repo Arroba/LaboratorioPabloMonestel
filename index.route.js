@@ -12,7 +12,7 @@
         })
         .state('solicitud',{
           url : '/solicitud', //ruta del url del estado
-          templateUrl : 'components/citas/cita.view.html',//vista que se va a cargar para este estado
+          templateUrl : './components/citas/cita.view.html',//vista que se va a cargar para este estado
           controller: 'citaController',
           controllerAs: 'ctrl'
         })
