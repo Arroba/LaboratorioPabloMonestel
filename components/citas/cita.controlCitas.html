@@ -1,15 +1,4 @@
-<!-- <!DOCTYPE html>
-<html ng-app="myApp">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bancoStyle.css">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-    <title>Control de Citas</title>
-    <link rel="stylesheet" href="css/normalize.css">
-  </head>
-  <body> -->
+
     <section ng-controller = 'citaController as ctrl'>
 
       <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 center">
@@ -60,9 +49,10 @@
       <table class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 " id="tblRegistro">
 
         <thead class="row"id="tblRegistro">
-          <select class="col-xs-3 col-xs-offset-2" name="">
-            <option value="en revision">En Revisión</option>
-            <option value="aprobadas">Aprobadas</option>
+          <select ng-model="ctrl.stateFilter" class="col-xs-3 col-xs-offset-2" name="estadoFiltro">
+            <option value="">--Seleccione un estado--</option>
+            <option value="en Revision">En Revisión</option>
+            <option value="aprobadas">Apro</option>
             <option value="rechazadas">Rechazadas</option>
           </select>
           <tr>
@@ -73,7 +63,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat='cita in ctrl.citas' id="info">
+          <tr ng-repeat="cita in ctrl.citas | filter:{estado:ctrl.stateFilter}"  id="info">
             <td class="col-xs-2">{{cita.id}}</td>
             <td class="col-xs-2">{{cita.descripcion}}</td>
             <td class="col-xs-2">{{cita.fecha | date: 'dd-MM-yyyy'}}</td>

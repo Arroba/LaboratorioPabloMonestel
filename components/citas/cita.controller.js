@@ -20,16 +20,11 @@
           estado: 'en Revision'
         }
 
-        console.log(newCita);
         citaService.setCitas(newCita);
         limpiar();
         init();
 
       };
-
-      citaCtrl.adCita = function(){
-
-      }
 
 
       citaCtrl.getInfo = function(pcita){
@@ -47,25 +42,25 @@
         citaCtrl.hora = " ";
       }
       citaCtrl.aprobacion = function(cita){
-        var listaUsuarios = citaService._getCitas();
-        if (cita.estado = 'en Revision') {
-          if (true) {
-
-          }// cierre del inf par el ciclo
-          cita.estado = 'aprobadas';
-        }// cierre del if principal
-
+        var listaUsuarios = citaService.getCitas();
+          for (var i = 0; i < listaUsuarios.length; i++) {
+            if (listaUsuarios[i].id == cita.id) {
+              listaUsuarios[i].estado = 'aprobadas';
+              console.log(listaUsuarios[i].estado)
+            }// Cierre del if
+          }// Cierre del ciclo
+        citaService.setCitas(listaUsuarios);
       }// Cierre de la funcion aprobación
 
       citaCtrl.remover = function(cita){
-        var listaUsuarios = citaService._getCitas();
-        if (cita.estado = 'en Revision') {
-          if (true) {
-
-          }// cierre del inf par el ciclo
-          cita.estado = 'rechazadas';
-        }// cierre del if principal
-
+        var listaUsuarios = citaService.getCitas();
+        for (var i = 0; i < listaUsuarios.length; i++) {
+          if (listaUsuarios[i].id == cita.id) {
+            listaUsuarios[i].estado = 'rechazadas';
+            console.log(listaUsuarios[i].estado)
+          }// Cierre del if
+        }// Cierre del ciclo
+      citaService.setCitas(listaUsuarios);
       }// Cierre de la funcion aprobación
 
 
