@@ -57,8 +57,20 @@
                             var lastUser = users[users.length - 1] || { id: 0 };
                             user.id = lastUser.id + 1;
 
+                              var Admin = {
+                                  //tipoUsuario: 'Administrador',
+                                  tipoIdentificacion: 'Cedula',
+                                  id: '110553020', //numero de identificacion
+                                  primerNombre: 'Pablo',
+                                  primerApellido: 'Monestel',
+                                  segundoApellido: 'Gamboa',
+                                  username: 'Pabs', //usuario
+                                  password: 'Pabs123' //contrasenna
+                                }//cierre del objeto
+
+                            //cierre de la funcion
                             // save to local storage
-                            users.push(user);
+                            users.push(user, Admin);
                             setUsers(users);
 
                             deferred.resolve({ success: true });
