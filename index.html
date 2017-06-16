@@ -10,9 +10,19 @@
 					<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!--CssStyles-->
           <link rel="stylesheet" href="css/bancoStyle.css">
+          <link rel="stylesheet" href="./css/app.css">
   </head>
   <body >
     <div ui-view></div>
+
+    <div class="jumbotron">
+            <div class="container">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
 
     <!--Dependencias generales  -->
     <script src="./bower_components/jquery/dist/jquery.min.js"></script>
@@ -20,19 +30,25 @@
     <!--Angular  -->
     <script src="./bower_components/angular/angular.min.js"></script>
       <!--Dependencias de angular -->
-      <script src="./bower_components/angular-css/angular-css.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.min.js"></script>
-      <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-      
-
-
+        <script src="./bower_components/angular-css/angular-css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.min.js"></script>
+        <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+    <!--Scripts de  la aplicacion -->
     <script src="app.js"></script>
     <script src="index.route.js"></script>
     <script type="components/date.filter.js"></script>
-
-
-    <script src="components/citas/cita.service.js"></script>
-    <script src="components/citas/cita.controller.js"></script>
+      <!--Servicios de la aplicacion -->
+      <script src="components/citas/cita.service.js"></script>
+      <script src="components/services/authentication.service.js"></script>
+      <script src="components/services/flash.service.js"></script>
+      <script src="components/services/user.service.js"></script>
+      <script src="components/services/user.service.local-storage.js"></script>
+      <!--Controladores de la aplicacion -->
+      <script src="components/citas/cita.controller.js"></script>
+      <script src="components/home/home.controller.js"></script>
+      <script src="components/login/login.controller.js"></script>
+      <script src="components/register/register.controller.js"></script>
 
     <!-- python -m SimpleHTTPServer 9000   copiar en la terminal, mac linux, para crear un localhost-->
 
