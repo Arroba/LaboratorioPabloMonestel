@@ -21,12 +21,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('registro', {
-        url : '/register',
-        templateUrl: './components/register/register.view.html',
-        controller: 'RegisterController',
-        controllerAs: 'vm'
-      })
+      // .state('registro', {
+      //   url : '/register',
+      //   templateUrl: './components/register/register.view.html',
+      //   controller: 'RegisterController',
+      //   controllerAs: 'vm'
+      // })
       .state('solicitud',{
         url : '/solicitud', //ruta del url del estado
         templateUrl : './components/citas/cita.view.html',//vista que se va a cargar para este estado
