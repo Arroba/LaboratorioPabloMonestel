@@ -1,7 +1,7 @@
 (function(){
   'use strict'
   angular
-  .module('myApp', ['ui.router','ngMessages','ngCookies'])
+  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad'])
   .config(configuration)
   .run(run);
 
@@ -12,24 +12,44 @@
       .state('login',{
         url : '/iniciarSesion',
         templateUrl: './components/login/login.view.html',
+        resolve: {
+		    	load: ['$ocLazyLoad', function($ocLazyLoad){
+		    		return $ocLazyLoad.load('./components/login/login.controller.js')
+		    	}]
+		    },
         controller: 'LoginController',
         controllerAs: 'vm'
       })
       .state('perfil',{
         url: '/perfil',
         templateUrl: './components/home/home.view.html',
+        resolve: {
+		    	load: ['$ocLazyLoad', function($ocLazyLoad){
+		    		return $ocLazyLoad.load('./components/home/home.controller.js')
+		    	}]
+		    },
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-         .state('registro', {
-           url : '/register',
-           templateUrl: './components/register/register.view.html',
-           controller: 'RegisterController',
-           controllerAs: 'vm'
-         })
+      .state('registro', {
+        url : '/register',
+        templateUrl: './components/register/register.view.html',
+        resolve: {
+   		    load: ['$ocLazyLoad', function($ocLazyLoad){
+   		    	return $ocLazyLoad.load('./components/register/register.controller.js')
+   		    }]
+        },
+        controller: 'RegisterController',
+        controllerAs: 'vm'
+      })
       .state('solicitud',{
         url : '/solicitud', //ruta del url del estado
         templateUrl : './components/citas/cita.view.html',//vista que se va a cargar para este estado
+        resolve: {
+   		    load: ['$ocLazyLoad', function($ocLazyLoad){
+   		    	return $ocLazyLoad.load('./components/citas/cita.controller.js')
+   		    }]
+        },
         controller: 'citaController',
         controllerAs: 'ctrl'
       })
@@ -37,6 +57,11 @@
         url : '/control',
         templateUrl: 'components/citas/cita.controlCitas.html'
       })
+      .state('medidas',{
+        url : '/',
+        templateUrl: 'components/citas/cita.controlCitas.html'
+      })
+
 
       $urlRouterProvider.otherwise('/iniciarSesion');
     }
