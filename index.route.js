@@ -58,8 +58,24 @@
         templateUrl: 'components/citas/cita.controlCitas.html'
       })
       .state('medidas',{
-        url : '/',
-        templateUrl: 'components/citas/cita.controlCitas.html'
+        url : '/medidas',
+        templateUrl: 'components/medidas/medidas.view.html',
+        resolve: {
+   		    load: ['$ocLazyLoad', function($ocLazyLoad){
+   		    	return $ocLazyLoad.load('./components/medidas/medidas.controller.js')//recarga los controladores dependiendo de la vista que se agregue es decir lo cambia de manera dinámica
+   		    }]
+        },
+        controller: 'medidasController',
+        controllerAs: 'userCtrl'
+      })
+      .state('admin',{
+        url : '/admin',
+        templateUrl : 'components/admin/admin.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/admin/admin.controller.js')
+          }]
+        },
       })
 
 
