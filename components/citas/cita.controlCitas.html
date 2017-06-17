@@ -1,5 +1,5 @@
 
-    <section ng-controller = 'citaController as ctrl'>
+    <section >
 
       <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 center">
         <h1 >Control y Registro de Citas</h1>
@@ -49,42 +49,33 @@
       <table class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 " id="tblRegistro">
 
         <thead class="row"id="tblRegistro">
-          <select ng-model="ctrl.stateFilter" class="col-xs-3 col-xs-offset-2" name="estadoFiltro">
+          <select ng-model="ctrl.estadoFiltro" class="col-xs-3 col-xs-offset-2" name="estadoFiltro">
             <option value="">--Seleccione un estado--</option>
-            <option value="en Revision">En Revisión</option>
-            <option value="aprobadas">Apro</option>
-            <option value="rechazadas">Rechazadas</option>
+            <option value="En Revisión">En Revisión</option>
+            <option value="Aprobada">Aprobadas</option>
+            <option value="Rechazada">Rechazadas</option>
           </select>
           <tr>
             <th class="col-xs-2 text-center">Cédula</th>
             <th class="col-xs-2 text-center">Descripción</th>
             <th class="col-xs-2 text-center">Fecha</th>
             <th class="col-xs-2 text-center">Hora</th>
+            <th class="col-xs-2 text-center">Estado</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="cita in ctrl.citas | filter:{estado:ctrl.stateFilter}"  id="info">
+          <tr ng-repeat="cita in ctrl.citas | filter:{estado:ctrl.estadoFiltro}"  id="info">
             <td class="col-xs-2">{{cita.id}}</td>
             <td class="col-xs-2">{{cita.descripcion}}</td>
             <td class="col-xs-2">{{cita.fecha | date: 'dd-MM-yyyy'}}</td>
             <td class="col-xs-2">{{cita.hora | date:'shortTime'}}</td>
-            <td><input class="btn btn-info table" type="submit" value="Aceptar" ng-click="ctrl.aprobacion(cita)"></td>
+            <td class="col-xs-2">{{cita.estado}}</td>
+
+            <td><input class="btn btn-info table" type="submit" value="Aceptar" ng-click="ctrl.aprobacion(cita)" ></td>
             <td><input class="btn btn-danger table" type="submit" value="Rechazar" ng-click="ctrl.remover(cita)"></td>
           </tr>
         </tbody>
       </table>
-
+      <h2>wololo</h2>
     </section>
-
-
-    <!-- <script src="vendor/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
-
-    <script src="components/citas/cita.controller.js"></script>
-    <script src="components/citas/cita.service.js"></script>
-
-
-  </body>
-</html> -->
