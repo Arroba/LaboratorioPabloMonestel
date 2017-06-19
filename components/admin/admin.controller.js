@@ -3,7 +3,7 @@ angular
 .module('myApp')
 .controller('adminController', adminController);
 
-function userController(adminService,ImageService,Upload){ //se inyecta el service userService en el controlador para que se tenga acceso
+function adminController(adminService,ImageService,Upload){ //se inyecta el service userService en el controlador para que se tenga acceso
 //controlador
 var userCtrl = this;
 userCtrl.cloudObj = ImageService.getConfiguration();

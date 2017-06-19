@@ -1,7 +1,7 @@
 (function(){
   'use strict'
   angular
-  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad'])
+  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS'])
   .config(configuration)
   .run(run);
 
@@ -9,6 +9,11 @@
 
   function configuration($stateProvider, $urlRouterProvider){ //stateProvider
     $stateProvider
+      .state('landing',{
+        url : '/inicio',
+        templateUrl : './components/landingPage/landing.view.html',
+        css : './css/style.landing.css'
+      })
       .state('login',{
         url : '/iniciarSesion',
         templateUrl: './components/login/login.view.html',
@@ -76,10 +81,12 @@
             return $ocLazyLoad.load('./components/admin/admin.controller.js')
           }]
         },
+        controller: 'adminController',
+        controllerAs:'userCtrl'
       })
 
 
-      $urlRouterProvider.otherwise('/iniciarSesion');
+      $urlRouterProvider.otherwise('/inicio');
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
