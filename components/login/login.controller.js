@@ -9,14 +9,14 @@
 
     function LoginController($location, AuthenticationService, FlashService,UserService){
         var vm = this;
-        
+
         //Funcion que valida los datos de inicio de sesion y setea los estados
         vm.login = function(){
           vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function(response){
               if (response.success) {
                   AuthenticationService.SetCredentials(vm.username, vm.password);
-                  $location.path('/perfil');
+                  $location.path('/admin');
               }else{
                  FlashService.Error(response.message);
                  vm.dataLoading = false;
