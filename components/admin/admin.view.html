@@ -126,10 +126,16 @@
     <div class="form-actions-meditions">
         <label for="">Registrar Medidas</label>
         <input type="submit" ng-model="ctrl.user.medidas" name="medition"></input>
+
+        <div ng-messages="frmRegUser.medidas.$error">
+          <div ng-messages-include="components/includes/messages.html"></div>
     </div>
     <div class="form-actions-dates">
         <label for="">Gestionar Citas</label>
         <input type="submit" ng-model="ctrl.user.citas" class="dates"></input>
+
+        <div ng-messages="frmRegUser.citas.$error">
+          <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 

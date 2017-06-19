@@ -51,7 +51,10 @@ userCtrl.user.edad = puser.edad;
 userCtrl.user.telefono = puser.telefono;
 userCtrl.user.contactoenCasodeEmergencia = puser.contactoenCasodeEmergencia;
 userCtrl.user.nombredeUsuario = puser.nombredeUsuario;
+userCtrl.user.estado = puser.estado;
 userCtrl.user.photo = new File(puser.photo);
+userCtrl.user.medidas = puser.medidas;
+userCtrl.user.citas = puser.citas;
 }
 
 userCtrl.update = function(){
@@ -69,9 +72,11 @@ fechadeNacimiento : userCtrl.user.fechadeNacimiento,
 edad : userCtrl.user.edad,
 telefono : userCtrl.user.telefono,
 contactoenCasodeEmergencia : userCtrl.user.contactoenCasodeEmergencia,
+estado : userCtrl.user.estado,
 nombredeUsuario : userCtrl.user.nombredeUsuario,
-photo: userCtrl.user.photo
-
+photo: userCtrl.user.photo,
+medition: ctrl.user.medidas,
+dates: ctrl.user.citas,
 }
 userService.updateUser(usuarioEditado);
 init();
