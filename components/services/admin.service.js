@@ -3,7 +3,7 @@
   .module('myApp')
   .service('adminService', adminService);
 
-  function userService(){
+  function adminService(){
     var users = [];
     var publicAPI = {
       setUsers : _setUsers,

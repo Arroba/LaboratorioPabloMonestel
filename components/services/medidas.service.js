@@ -3,7 +3,7 @@
   .module('myApp')
   .service('medidasService', medidasService);
 
-  function userService(){
+  function medidasService(){
     var users = [];
     var publicAPI = {
       setUsers : _setUsers,
