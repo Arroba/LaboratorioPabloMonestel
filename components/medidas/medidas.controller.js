@@ -3,8 +3,10 @@
   angular
   .module('myApp')
   .controller('medidasController', medidasController);
-  userController.$inject = ['userService'];
-    function userController(userService){ //se inyecta el service userService en el controlador para que se tenga acceso
+
+  medidasController.$inject = ['userService'];
+  
+    function medidasController(userService){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var userCtrl = this;
 

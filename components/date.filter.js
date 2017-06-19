@@ -1,6 +1,7 @@
 (function(){
   angular
-    .module('myApp').filter('dateRange', function() {
+    .module('myApp')
+    .filter('dateRange', function() {
     return function(records, from, to) {
         if(from ==undefined || to==undefined){
           from = new Date('01/01/1900');
