@@ -2,30 +2,14 @@
 
   <form name="frmRegMedicion" ng-submit="ctrl.save(ctrl.user)" novalidate autocomplete="off">
 
-    <h2>Cálculo IMC</h2>
+    <h2>Información General</h2>
     <hr>
 
     <label>Identificación:</label>
-    <input type="text" ng-model="ctrl.user.id" name="id" required/>
+    <input type="text" ng-model="ctrl.user.id" name="id" ng-minlength="7" ng-maxlength="9" required/>
     <div ng-messages="frmRegMedicion.id.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
-
-
-    <label>Peso:<input type="number" ng-model="ctrl.user.peso" name="peso" required/> kg</label>
-    <div ng-messages="frmRegMedicion.peso.$error">
-      <div ng-messages-include="components/includes/messages.html"></div>
-    </div>
-
-
-    <label>Estatura:<input type="number" ng-model="ctrl.user.estatura" name="estatura" required/> m </label>
-    <div ng-messages="frmRegMedicion.estatura.$error">
-      <div ng-messages-include="components/includes/messages.html"></div>
-    </div>
-
-
-    <h2>Perímetros(cm)</h2>
-    <hr>
 
     <label for="">Fecha:</label>
     <input type="date" ng-model="ctrl.user.fecha" name="fecha" required>
@@ -34,80 +18,97 @@
     </div>
 
 
+    <h2>Cálculo IMC</h2>
+    <hr>
+
+    <label>Peso:<input type="number" ng-model="ctrl.user.peso" name="peso" min="1" required/> kg</label>
+    <div ng-messages="frmRegMedicion.peso.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label>Estatura:<input type="number" ng-model="ctrl.user.estatura" name="estatura" min="1" required /> m </label>
+    <div ng-messages="frmRegMedicion.estatura.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+
+    <h2>Perímetros(cm)</h2>
+    <hr>
+
     <label for="">Bíceps:</label>
-    <input type="number" ng-model="ctrl.user.bicepIzquierdo" name="bicepIzquierdo" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.bicepIzquierdo" name="bicepIzquierdo" placeholder="Izquierdo" min="1" required>
     <div ng-messages="frmRegMedicion.bicepIzquierdo.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.bicepDerecho" name="bicepDerecho" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.bicepDerecho" name="bicepDerecho" placeholder="Derecho" min="1" required>
     <div ng-messages="frmRegMedicion.bicepDerecho.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Bíceps contraído:</label>
-    <input type="number" ng-model="ctrl.user.bicepContraidoIzq" name="bicepContraidoIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.bicepContraidoIzq" name="bicepContraidoIzq" placeholder="Izquierdo" min="1" required>
     <div ng-messages="frmRegMedicion.bicepContraidoIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.bicepContraidoDer" name="bicepContraidoDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.bicepContraidoDer" name="bicepContraidoDer" placeholder="Derecho" min="1" required>
     <div ng-messages="frmRegMedicion.bicepContraidoDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
     <label for="">Pantorrilla:</label>
-    <input type="number" ng-model="ctrl.user.pantorrillaIzq" name="pantorrillaIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.pantorrillaIzq" name="pantorrillaIzq" placeholder="Izquierdo" min="1" required>
     <div ng-messages="frmRegMedicion.pantorrillaIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.pantorrillaDer" name="pantorrillaDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.pantorrillaDer" name="pantorrillaDer" placeholder="Derecho" min="1" required>
     <div ng-messages="frmRegMedicion.pantorrillaDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
     <label for="">Muslo:</label>
-    <input type="number" ng-model="ctrl.user.musloIzq" name="musloIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.musloIzq" name="musloIzq" placeholder="Izquierdo" min="1" required>
     <div ng-messages="frmRegMedicion.musloIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.musloDer" name="musloDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.musloDer" name="musloDer" placeholder="Derecho" min="1"  required>
     <div ng-messages="frmRegMedicion.musloDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Cintura:</label>
-    <input type="number" ng-model="ctrl.user.cintura" name="cintura" required>
+    <input type="number" ng-model="ctrl.user.cintura" name="cintura" min="1" required>
     <div ng-messages="frmRegMedicion.cintura.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
     <label for="">Abdomen:</label>
-    <input type="number" ng-model="ctrl.user.abdomen" name="abdomen" required>
+    <input type="number" ng-model="ctrl.user.abdomen" name="abdomen" min="1" required>
     <div ng-messages="frmRegMedicion.abdomen.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Cadera:</label>
-    <input type="number" ng-model="ctrl.user.cadera" name="cadera" required>
+    <input type="number" ng-model="ctrl.user.cadera" name="cadera" min="1" required>
     <div ng-messages="frmRegMedicion.cadera.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
     <label for="">Pecho:</label>
-    <input type="number" ng-model="ctrl.user.pecho" name="pecho" required>
+    <input type="number" ng-model="ctrl.user.pecho" name="pecho" min="1" required>
     <div ng-messages="frmRegMedicion.pecho.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Espalda:</label>
-    <input type="number" ng-model="ctrl.user.espalda" name="espalda" required>
+    <input type="number" ng-model="ctrl.user.espalda" name="espalda" min="1" required>
     <div ng-messages="frmRegMedicion.espalda.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
@@ -116,24 +117,24 @@
     <hr>
 
     <label for="">Tríceps:</label>
-    <input type="number" ng-model="ctrl.user.tricepIzq" name="tricepIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.tricepIzq" name="tricepIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.tricepIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.tricepDer" name="tricepDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.tricepDer" name="tricepDer" min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.tricepDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Subescapular:</label>
-    <input type="number" ng-model="ctrl.user.subescapularIzq" name="subescapularIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.subescapularIzq" name="subescapularIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.subescapularIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.subescapularDer" name="subescapularDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.subescapularDer" name="subescapularDer" min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.subescapularDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
@@ -141,48 +142,48 @@
 
 
     <label for="">Supraespinal:</label>
-    <input type="number" ng-model="ctrl.user.supraespinalIzq" name="supraespinalIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.supraespinalIzq" name="supraespinalIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.supraespinalIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.supraespinalDer" name="supraespinalDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.supraespinalDer" name="supraespinalDer" min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.supraespinalDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Abdominal:</label>
-    <input type="number" ng-model="ctrl.user.abdominalIzq" name="abdominalIzq" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.abdominalIzq" name="abdominalIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.abdominalIzq.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.abdominalDer" name="abdominalDer" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.abdominalDer" name="abdominalDer" min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.abdominalDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Muslo:</label>
-    <input type="number" ng-model="ctrl.user.musloIzqPliegue" name="musloIzqPliegue" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.musloIzqPliegue" name="musloIzqPliegue" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.musloIzqPliegue.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.musloDerPliegue" name="musloDerPliegue" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.musloDerPliegue" name="musloDerPliegue" min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.musloDerPliegue.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
 
     <label for="">Pantorrilla:</label>
-    <input type="number" ng-model="ctrl.user.pantorrillaIzqPliegue" name="pantorrillaIzqPliegue" placeholder="Izquierdo"  required>
+    <input type="number" ng-model="ctrl.user.pantorrillaIzqPliegue" name="pantorrillaIzqPliegue"  min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.pantorrillaIzqPliegue.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-    <input type="number" ng-model="ctrl.user.pantorrillaDerPliegue" name="pantorrillaDerPliegue" placeholder="Derecho"  required>
+    <input type="number" ng-model="ctrl.user.pantorrillaDerPliegue" name="pantorrillaDerPliegue"  min="1" placeholder="Derecho"  required>
     <div ng-messages="frmRegMedicion.pantorrillaDerPliegue.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
@@ -191,12 +192,12 @@
     <button type="submit" ng-click="ctrl.reset()" ng-disabled="frmRegMedicion.$invalid">Register </button>
     <input type="button" value="Actualizar" ng-click="ctrl.update(user)">
 
-    <!-- <output ng-repeat="user in ctrl.users">{{user.bicepIzquierdo}}</output> -->
 
   </form>
 
   <h2>Mostar información por fecha</h2>
   <hr>
+
 
   <input ng-model="from" name="from" type="date"/>
   <input ng-model="ctrl.to" name="to" type="date"/>
@@ -209,7 +210,8 @@
         <th>Fecha</th>
         <th>Peso</th>
         <th>Estatura</th>
-        <th>Resultado</th>
+        <th>Resultado de IMC</th>
+        <th>Situación actual</th>
         <th>Bícep izquierdo</th>
         <th>Bícep derecho</th>
         <th>Bícep contraído izquierdo</th>
@@ -242,9 +244,10 @@
       <tr ng-repeat="user in ctrl.users | dateRange:from:ctrl.to">
           <td>{{user.id}}</td>
           <td>{{user.fecha | date:'yyyy-MM-dd'}}</td>
-          <td>{{user.peso}}</td>
-          <td>{{user.estatura}}</td>
-          <td>{{user.operacion}}</td>
+          <td>{{user.peso}} kg</td>
+          <td>{{user.estatura}} m</td>
+          <td>{{user.peso / (user.estatura * user.estatura) | number}}</td>
+          <td>{{user.Situacion}}</td>
           <td>{{user.bicepIzquierdo}}</td>
           <td>{{user.bicepDerecho}}</td>
           <td>{{user.bicepContraidoIzq}}</td>
@@ -272,8 +275,6 @@
           <td>{{user.pantorrillaIzqPliegue}}</td>
           <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
       </tr>
-
     </tbody>
   </table>
-
 </section>
