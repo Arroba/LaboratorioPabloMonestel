@@ -1,7 +1,7 @@
 ﻿(function(){
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .controller('LoginController', LoginController);
 
     LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService'];

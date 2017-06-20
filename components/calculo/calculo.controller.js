@@ -1,11 +1,25 @@
 (function(){
-  'use strcit';
   angular
+<<<<<<< HEAD:components/medidas/medidas.controller.js
   .module('myApp')
   .controller('userController', userController);
   userController.$inject = ['userService'];
 
+<<<<<<< HEAD:components/calculo/calculo.controller.js
     function userController(userService){
+=======
+  medidasController.$inject = ['userService'];
+  
+    function medidasController(userService){ //se inyecta el service userService en el controlador para que se tenga acceso
+      //controlador
+=======
+  .module('gymApp')
+  .controller('userController', userController);
+  // userController.$inject = ['userService'];
+
+    function userController(userService){
+>>>>>>> Fabian:components/calculo/calculo.controller.js
+>>>>>>> master:components/calculo/calculo.controller.js
       var userCtrl = this;
 
 
@@ -14,7 +28,10 @@
         users = calculoIMC();
         userCtrl.user = {};
         userCtrl.to = new Date();
+<<<<<<< HEAD:components/calculo/calculo.controller.js
         userCtrl.situacion = '';
+=======
+>>>>>>> master:components/calculo/calculo.controller.js
       }init();
 
 
@@ -147,4 +164,8 @@
 
 
     }//cierre de funcion userCtrl
+<<<<<<< HEAD:components/calculo/calculo.controller.js
 })();
+=======
+})();
+>>>>>>> master:components/calculo/calculo.controller.js

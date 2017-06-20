@@ -1,16 +1,30 @@
 (function(){
+<<<<<<< HEAD
   angular
     .module('myApp')
     .controller('administradorController', administradorController);
+=======
+  'use strict';
+  angular
+  .module('gymApp')
+  .controller('administradorController', administradorController);
+>>>>>>> master
 
     function administradorController(administradorService,ImageService,Upload){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var adminCtrl = this;
       adminCtrl.cloudObj = ImageService.getConfiguration();
+<<<<<<< HEAD
       
 
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
         adminCtrl.users = administradorService.getUsers(); 
+=======
+
+
+      function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
+        adminCtrl.users = administradorService.getUsers();
+>>>>>>> master
         adminCtrl.user = {};
       }init();
 
@@ -28,7 +42,11 @@
       adminCtrl.save= function(pNewUser){
 
 
+<<<<<<< HEAD
         administradorService.setUsers(pNewUser); 
+=======
+        administradorService.setUsers(pNewUser);
+>>>>>>> master
         adminCtrl.user = {};
         limpiar();
         init();
@@ -73,7 +91,11 @@
           photo: adminCtrl.user.photo
 
         }
+<<<<<<< HEAD
         administradorService.updateUser(usuarioEditado);  
+=======
+        administradorService.updateUser(usuarioEditado);
+>>>>>>> master
         init();
         limpiar();
       }
@@ -112,4 +134,8 @@
     }
      //se establece un objeto de angular normal
 
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> master

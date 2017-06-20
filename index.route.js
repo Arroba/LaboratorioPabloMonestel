@@ -1,7 +1,15 @@
 (function(){
   'use strict'
   angular
+<<<<<<< HEAD
   .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS','ngFileUpload'])
+=======
+<<<<<<< HEAD
+  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS'])
+=======
+  .module('gymApp', ['ui.router','ngMessages', 'ngCookies', 'oc.lazyLoad', 'angularCSS','ngFileUpload'])
+>>>>>>> Fabian
+>>>>>>> master
   .config(configuration)
   .run(run);
 
@@ -10,7 +18,15 @@
   function configuration($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('landing',{
+<<<<<<< HEAD
         url : '/landing',
+=======
+<<<<<<< HEAD
+        url : '/inicio',
+=======
+        url : '/landing',
+>>>>>>> Fabian
+>>>>>>> master
         templateUrl : './components/landingPage/landing.view.html',
         css : './css/style.landing.css'
       })
@@ -88,6 +104,7 @@
             return $ocLazyLoad.load('./components/administrador/administrador.controller.js')
           }]
         },
+<<<<<<< HEAD
         controller: 'administradorController',
         controllerAs:'ctrl'
       })
@@ -96,6 +113,26 @@
       
       $urlRouterProvider.otherwise('/landing'); 
   } //cierre de las rutas
+=======
+<<<<<<< HEAD
+        controller: 'adminController',
+        controllerAs:'userCtrl'
+      })
+
+
+      $urlRouterProvider.otherwise('/inicio');
+    }
+=======
+        controller: 'administradorController',
+        controllerAs:'ctrl'
+      })
+
+
+
+      $urlRouterProvider.otherwise('/landing');
+  } //cierre de las rutas
+>>>>>>> Fabian
+>>>>>>> master
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
     function run($rootScope, $location, $cookieStore, $http) {

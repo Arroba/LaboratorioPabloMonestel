@@ -1,6 +1,7 @@
 (function(){
+  'use strict'
   angular
-    .module('myApp')
+    .module('gymApp')
     .service('citaService', citaService);
 
   function citaService(){

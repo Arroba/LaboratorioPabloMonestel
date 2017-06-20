@@ -1,9 +1,21 @@
 (function(){
+  'use strict';
   angular
+<<<<<<< HEAD:components/services/administrador.service.js
   .module('myApp')
   .service('administradorService', administradorService);
 
   function administradorService(){
+=======
+  .module('gymApp')
+  .service('administradorService', administradorService);
+
+<<<<<<< HEAD:components/services/admin.service.js
+  function adminService(){
+=======
+  function administradorService(){
+>>>>>>> Fabian:components/services/administrador.service.js
+>>>>>>> master:components/services/administrador.service.js
     var users = [];
     var publicAPI = {
       setUsers : _setUsers,

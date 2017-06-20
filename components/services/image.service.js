@@ -1,6 +1,7 @@
 (function(){
+  'use strict';
   angular
-  .module('myApp')
+  .module('gymApp')
   .service('ImageService', ImageService);
 
   function ImageService($http){

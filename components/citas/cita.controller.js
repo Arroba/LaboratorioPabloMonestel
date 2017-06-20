@@ -1,6 +1,7 @@
 (function(){
+  'use strict';
   angular
-    .module('myApp')
+    .module('gymApp')
     .controller('citaController', citaController);
     function citaController(citaService){
 
@@ -8,7 +9,11 @@
 
       function init(){
         citaCtrl.citas = citaService.getCitas();
+<<<<<<< HEAD
         xx = '12';
+=======
+        
+>>>>>>> master
       }init();
 
       citaCtrl.save= function(){
