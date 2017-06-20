@@ -1,11 +1,7 @@
 (function(){
   'use strict'
   angular
-<<<<<<< HEAD
-  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS'])
-=======
   .module('gymApp', ['ui.router','ngMessages', 'ngCookies', 'oc.lazyLoad', 'angularCSS','ngFileUpload'])
->>>>>>> Fabian
   .config(configuration)
   .run(run);
 
@@ -14,11 +10,7 @@
   function configuration($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('landing',{
-<<<<<<< HEAD
-        url : '/inicio',
-=======
         url : '/landing',
->>>>>>> Fabian
         templateUrl : './components/landingPage/landing.view.html',
         css : './css/style.landing.css'
       })
@@ -96,15 +88,6 @@
             return $ocLazyLoad.load('./components/administrador/administrador.controller.js')
           }]
         },
-<<<<<<< HEAD
-        controller: 'adminController',
-        controllerAs:'userCtrl'
-      })
-
-
-      $urlRouterProvider.otherwise('/inicio');
-    }
-=======
         controller: 'administradorController',
         controllerAs:'ctrl'
       })
@@ -113,7 +96,6 @@
 
       $urlRouterProvider.otherwise('/landing');
   } //cierre de las rutas
->>>>>>> Fabian
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
     function run($rootScope, $location, $cookieStore, $http) {

@@ -1,20 +1,10 @@
 (function(){
   angular
-<<<<<<< HEAD:components/medidas/medidas.controller.js
-  .module('myApp')
-  .controller('medidasController', medidasController);
-
-  medidasController.$inject = ['userService'];
-  
-    function medidasController(userService){ //se inyecta el service userService en el controlador para que se tenga acceso
-      //controlador
-=======
   .module('gymApp')
   .controller('userController', userController);
   // userController.$inject = ['userService'];
 
     function userController(userService){
->>>>>>> Fabian:components/calculo/calculo.controller.js
       var userCtrl = this;
 
 

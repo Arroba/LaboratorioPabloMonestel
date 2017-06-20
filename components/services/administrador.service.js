@@ -4,11 +4,7 @@
   .module('gymApp')
   .service('administradorService', administradorService);
 
-<<<<<<< HEAD:components/services/admin.service.js
-  function adminService(){
-=======
   function administradorService(){
->>>>>>> Fabian:components/services/administrador.service.js
     var users = [];
     var publicAPI = {
       setUsers : _setUsers,

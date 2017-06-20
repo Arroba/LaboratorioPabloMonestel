@@ -1,11 +1,7 @@
 (function(){
   'use strict';
   angular
-<<<<<<< HEAD
-    .module('myApp')
-=======
     .module('gymApp')
->>>>>>> Fabian
     .filter('dateRange', function() {
     return function(records, from, to) {
         if(from ==undefined || to==undefined){
