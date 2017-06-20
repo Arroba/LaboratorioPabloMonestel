@@ -1,7 +1,7 @@
 ﻿(function(){
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .factory('FlashService', FlashService);
 
     FlashService.$inject = ['$rootScope'];

@@ -1,16 +1,16 @@
 (function(){
   'use strict'
   angular
-  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS'])
+  .module('gymApp', ['ui.router','ngMessages', 'ngCookies', 'oc.lazyLoad', 'angularCSS','ngFileUpload'])
   .config(configuration)
   .run(run);
 
   configuration.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function configuration($stateProvider, $urlRouterProvider){ //stateProvider
+  function configuration($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('landing',{
-        url : '/inicio',
+        url : '/landing',
         templateUrl : './components/landingPage/landing.view.html',
         css : './css/style.landing.css'
       })
@@ -18,10 +18,10 @@
         url : '/iniciarSesion',
         templateUrl: './components/login/login.view.html',
         resolve: {
-		    	load: ['$ocLazyLoad', function($ocLazyLoad){
-		    		return $ocLazyLoad.load('./components/login/login.controller.js')
-		    	}]
-		    },
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/login/login.controller.js')
+          }]
+        },
         controller: 'LoginController',
         controllerAs: 'vm'
       })
@@ -29,10 +29,10 @@
         url: '/perfil',
         templateUrl: './components/home/home.view.html',
         resolve: {
-		    	load: ['$ocLazyLoad', function($ocLazyLoad){
-		    		return $ocLazyLoad.load('./components/home/home.controller.js')
-		    	}]
-		    },
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/home/home.controller.js')
+          }]
+        },
         controller: 'HomeController',
         controllerAs: 'vm'
       })
@@ -40,9 +40,9 @@
         url : '/register',
         templateUrl: './components/register/register.view.html',
         resolve: {
-   		    load: ['$ocLazyLoad', function($ocLazyLoad){
-   		    	return $ocLazyLoad.load('./components/register/register.controller.js')
-   		    }]
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/register/register.controller.js')
+          }]
         },
         controller: 'RegisterController',
         controllerAs: 'vm'
@@ -51,43 +51,51 @@
         url : '/solicitud', //ruta del url del estado
         templateUrl : './components/citas/cita.view.html',//vista que se va a cargar para este estado
         resolve: {
-   		    load: ['$ocLazyLoad', function($ocLazyLoad){
-   		    	return $ocLazyLoad.load('./components/citas/cita.controller.js')
-   		    }]
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/citas/cita.controller.js')
+          }]
         },
         controller: 'citaController',
         controllerAs: 'ctrl'
       })
       .state('control',{
         url : '/control',
-        templateUrl: 'components/citas/cita.controlCitas.html'
-      })
-      .state('medidas',{
-        url : '/medidas',
-        templateUrl: 'components/medidas/medidas.view.html',
-        resolve: {
-   		    load: ['$ocLazyLoad', function($ocLazyLoad){
-   		    	return $ocLazyLoad.load('./components/medidas/medidas.controller.js')//recarga los controladores dependiendo de la vista que se agregue es decir lo cambia de manera dinámica
-   		    }]
-        },
-        controller: 'medidasController',
-        controllerAs: 'userCtrl'
-      })
-      .state('admin',{
-        url : '/admin',
-        templateUrl : 'components/admin/admin.view.html',
+        templateUrl: 'components/citas/cita.controlCitas.html',
         resolve: {
           load: ['$ocLazyLoad', function($ocLazyLoad){
-            return $ocLazyLoad.load('./components/admin/admin.controller.js')
+            return $ocLazyLoad.load('./components/citas/cita.controller.js')
           }]
         },
-        controller: 'adminController',
-        controllerAs:'userCtrl'
+        controller: 'citaController',
+        controllerAs: 'ctrl'
+      })
+      .state('calculo',{
+        url : '/calculo',
+        templateUrl: 'components/calculo/calculo.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/calculo/calculo.controller.js')//recarga los controladores dependiendo de la vista que se agregue es decir lo cambia de manera dinámica
+          }]
+        },
+        controller: 'userController',
+        controllerAs: 'ctrl'
+      })
+      .state('administrador',{
+        url : '/administrador',
+        templateUrl : 'components/administrador/administrador.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/administrador/administrador.controller.js')
+          }]
+        },
+        controller: 'administradorController',
+        controllerAs:'ctrl'
       })
 
 
-      $urlRouterProvider.otherwise('/inicio');
-    }
+
+      $urlRouterProvider.otherwise('/landing');
+  } //cierre de las rutas
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
     function run($rootScope, $location, $cookieStore, $http) {
