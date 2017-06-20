@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .factory('AuthenticationService', AuthenticationService);
 
     AuthenticationService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', 'UserService'];
