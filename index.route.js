@@ -1,7 +1,7 @@
 (function(){
   'use strict'
   angular
-  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS'])
+  .module('myApp', ['ui.router','ngMessages','ngCookies','oc.lazyLoad','angularCSS','ngFileUpload'])
   .config(configuration)
   .run(run);
 

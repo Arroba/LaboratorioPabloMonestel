@@ -6,7 +6,7 @@
   "description": "Laboratorio 1 parte técnica",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/Arroba/LaboratorioPabloMonestel",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,7 +14,7 @@
     "test",
     "tests"
   ],
-  "dependencies" : {
+  "dependencies": {
     "angular": "^1.6.3",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
