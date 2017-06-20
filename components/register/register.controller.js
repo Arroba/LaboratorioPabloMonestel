@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .controller('RegisterController', RegisterController);
 
     RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];

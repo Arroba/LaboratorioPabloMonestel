@@ -1,6 +1,8 @@
 (function(){
+  'use strict';
   angular
-    .module('myApp').filter('dateRange', function() {
+    .module('gymApp')
+    .filter('dateRange', function() {
     return function(records, from, to) {
         if(from ==undefined || to==undefined){
           from = new Date('01/01/1900');
