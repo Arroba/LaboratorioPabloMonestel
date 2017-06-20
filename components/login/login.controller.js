@@ -16,7 +16,7 @@
             AuthenticationService.Login(vm.username, vm.password, function(response){
               if (response.success) {
                   AuthenticationService.SetCredentials(vm.username, vm.password);
-                  $location.path('/admin');
+                  $location.path('/administrador');
               }else{
                  FlashService.Error(response.message);
                  vm.dataLoading = false;
