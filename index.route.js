@@ -10,7 +10,7 @@
   function configuration($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('landing',{
-        url : '/inicio',
+        url : '/landing',
         templateUrl : './components/landingPage/landing.view.html',
         css : './css/style.landing.css'
       })
@@ -58,8 +58,44 @@
         controller: 'citaController',
         controllerAs: 'ctrl'
       })
+      .state('control',{
+        url : '/control',
+        templateUrl: 'components/citas/cita.controlCitas.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/citas/cita.controller.js')
+          }]
+        },
+        controller: 'citaController',
+        controllerAs: 'ctrl'
+      })
+      .state('calculo',{
+        url : '/calculo',
+        templateUrl: 'components/calculo/calculo.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/calculo/calculo.controller.js')//recarga los controladores dependiendo de la vista que se agregue es decir lo cambia de manera dinámica
+          }]
+        },
+        controller: 'userController',
+        controllerAs: 'userCtrl'
+      })
+      .state('administrador',{
+        url : '/administrador',
+        templateUrl : 'components/administrador/administrador.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/administrador/administrador.controller.js')
+          }]
+        },
+        controller: 'userController',
+        controllerAs:'userCtrl'
+      })
 
-  }
+
+      
+      $urlRouterProvider.otherwise('/landing'); 
+  } //cierre de las rutas
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
     function run($rootScope, $location, $cookieStore, $http) {
