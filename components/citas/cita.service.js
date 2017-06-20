@@ -1,6 +1,7 @@
 (function(){
+  'use strict'
   angular
-    .module('myApp')
+    .module('gymApp')
     .service('citaService', citaService);
 
   function citaService(){
@@ -8,7 +9,7 @@
     var publicAPI = {
       setCitas : _setCitas,
       getCitas : _getCitas,
-      updateCita : _updateCita
+      updateState: _updateState
     };
     return publicAPI;
 
@@ -16,6 +17,10 @@
       var listaUsuarios = _getCitas();
       listaUsuarios.push(pCita);
       localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
+    }
+    function _updateState(pListaCitas){
+
+      localStorage.setItem('listaUsuarios', JSON.stringify(pListaCitas));
     }
 
     function _getCitas(){
@@ -25,17 +30,7 @@
       }
       return listaUsuarios;
     }
-    function _updateCita(pObjUsuario){
-      submitActualizar.classList.add('display');
-      submit.classList.remove('display');
-      var listaUsuarios = _getCitas();
-      for (var i = 0; i < listaUsuarios.length; i++) {
-        if (listaUsuarios[i].id == pObjUsuario.id ) {
-          listaUsuarios[i] = pObjUsuario;
-        }
-      }
-      localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
-    }
+
 
   }
 

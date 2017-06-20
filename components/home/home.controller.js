@@ -1,7 +1,7 @@
-﻿(function () {
+﻿(function(){
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .controller('HomeController', HomeController);
 
     HomeController.$inject = ['UserService', '$rootScope'];
