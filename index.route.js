@@ -78,7 +78,7 @@
           }]
         },
         controller: 'userController',
-        controllerAs: 'userCtrl'
+        controllerAs: 'ctrl'
       })
       .state('administrador',{
         url : '/administrador',
