@@ -1,86 +1,86 @@
 (function(){
   angular
     .module('myApp')
-    .controller('userController', userController);
+    .controller('administradorController', administradorController);
 
-    function userController(userService,ImageService,Upload){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function administradorController(administradorService,ImageService,Upload){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
-      var userCtrl = this;
-      userCtrl.cloudObj = ImageService.getConfiguration();
+      var adminCtrl = this;
+      adminCtrl.cloudObj = ImageService.getConfiguration();
 
 
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
-        userCtrl.users = userService.getUsers();
-        userCtrl.user = {};
+        adminCtrl.users = administradorService.getUsers(); 
+        adminCtrl.user = {};
       }init();
 
-      userCtrl.presave= function(pNewUser){
-        userCtrl.cloudObj.data.file = document.getElementById("photo").files[0];
-        Upload.upload(userCtrl.cloudObj)
+      adminCtrl.presave= function(pNewUser){
+        adminCtrl.cloudObj.data.file = document.getElementById("photo").files[0];
+        Upload.upload(adminCtrl.cloudObj)
           .success(function(data){
             pNewUser.photo = data.url;
-            userCtrl.save(pNewUser);
+            adminCtrl.save(pNewUser);
           });
 
 
       }
 
-      userCtrl.save= function(pNewUser){
+      adminCtrl.save= function(pNewUser){
 
 
-        userService.setUsers(pNewUser);
-        userCtrl.user = {};
+        administradorService.setUsers(pNewUser); 
+        adminCtrl.user = {};
         limpiar();
         init();
 
       }
 
 
-      userCtrl.getInfo = function(puser){
-        userCtrl.user.tipodeCuenta = puser.tipodeCuenta;
-        userCtrl.user.tipodeIdentificacion = puser.tipodeIdentificacion;
-        userCtrl.user.numerodeIdentificacion = puser.numerodeIdentificacion;
-        userCtrl.user.nacionalidad = puser.nacionalidad;
-        userCtrl.user.genero = puser.genero;
-        userCtrl.user.primerNombre = puser.primerNombre;
-        userCtrl.user.segundoNombre = puser.segundoNombre;
-        userCtrl.user.primerApellido = puser.primerApellido;
-        userCtrl.user.segundoApellido = puser.segundoApellido;
-        userCtrl.user.fechadeNacimiento = new Date(puser.fechadeNacimiento);
-        userCtrl.user.edad = puser.edad;
-        userCtrl.user.telefono = puser.telefono;
-        userCtrl.user.contactoenCasodeEmergencia = puser.contactoenCasodeEmergencia;
-        userCtrl.user.nombredeUsuario = puser.nombredeUsuario;
-        userCtrl.user.photo = new File(puser.photo);
+      adminCtrl.getInfo = function(puser){
+        adminCtrl.user.tipodeCuenta = puser.tipodeCuenta;
+        adminCtrl.user.tipodeIdentificacion = puser.tipodeIdentificacion;
+        adminCtrl.user.numerodeIdentificacion = puser.numerodeIdentificacion;
+        adminCtrl.user.nacionalidad = puser.nacionalidad;
+        adminCtrl.user.genero = puser.genero;
+        adminCtrl.user.primerNombre = puser.primerNombre;
+        adminCtrl.user.segundoNombre = puser.segundoNombre;
+        adminCtrl.user.primerApellido = puser.primerApellido;
+        adminCtrl.user.segundoApellido = puser.segundoApellido;
+        adminCtrl.user.fechadeNacimiento = new Date(puser.fechadeNacimiento);
+        adminCtrl.user.edad = puser.edad;
+        adminCtrl.user.telefono = puser.telefono;
+        adminCtrl.user.contactoenCasodeEmergencia = puser.contactoenCasodeEmergencia;
+        adminCtrl.user.nombredeUsuario = puser.nombredeUsuario;
+        adminCtrl.user.photo = new File(puser.photo);
       }
 
-      userCtrl.update = function(){
+      adminCtrl.update = function(){
         var usuarioEditado = {
-          tipodeCuenta: userCtrl.user.tipodeCuenta,
-          tipodeIdentificacion : userCtrl.user.tipodeIdentificacion,
-          numerodeIdentificacion : userCtrl.user.numerodeIdentificacion,
-          nacionalidad : userCtrl.user.nacionalidad,
-          genero: userCtrl.user.genero,
-          primerNombre : userCtrl.user.primerNombre,
-          segundoNombre : userCtrl.user.segundoNombre,
-          primerApellido : userCtrl.user.primerApellido,
-          segundoApellido : userCtrl.user.segundoApellido,
-          fechadeNacimiento : userCtrl.user.fechadeNacimiento,
-          edad : userCtrl.user.edad,
-          telefono : userCtrl.user.telefono,
-          contactoenCasodeEmergencia : userCtrl.user.contactoenCasodeEmergencia,
-          nombredeUsuario : userCtrl.user.nombredeUsuario,
-          photo: userCtrl.user.photo
+          tipodeCuenta: adminCtrl.user.tipodeCuenta,
+          tipodeIdentificacion : adminCtrl.user.tipodeIdentificacion,
+          numerodeIdentificacion : adminCtrl.user.numerodeIdentificacion,
+          nacionalidad : adminCtrl.user.nacionalidad,
+          genero: adminCtrl.user.genero,
+          primerNombre : adminCtrl.user.primerNombre,
+          segundoNombre : adminCtrl.user.segundoNombre,
+          primerApellido : adminCtrl.user.primerApellido,
+          segundoApellido : adminCtrl.user.segundoApellido,
+          fechadeNacimiento : adminCtrl.user.fechadeNacimiento,
+          edad : adminCtrl.user.edad,
+          telefono : adminCtrl.user.telefono,
+          contactoenCasodeEmergencia : adminCtrl.user.contactoenCasodeEmergencia,
+          nombredeUsuario : adminCtrl.user.nombredeUsuario,
+          photo: adminCtrl.user.photo
 
         }
-        userService.updateUser(usuarioEditado);
+        administradorService.updateUser(usuarioEditado);  
         init();
         limpiar();
       }
 
       function limpiar(){
 
-        userCtrl.user={};
+        adminCtrl.user={};
 
       }
 

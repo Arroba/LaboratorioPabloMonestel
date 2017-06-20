@@ -88,7 +88,7 @@
             return $ocLazyLoad.load('./components/administrador/administrador.controller.js')
           }]
         },
-        controller: 'userController',
+        controller: 'administradorController',
         controllerAs:'userCtrl'
       })
 
