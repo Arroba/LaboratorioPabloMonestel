@@ -1,0 +1,192 @@
+<section>
+
+  <form name="frmRegUser" ng-submit="ctrl.presave(ctrl.user)" novalidate autocomplete="off">
+    <label for="">Tipo de Cuenta</label>
+    <select  name="tipodeCuenta" ng-model="ctrl.user.tipodeCuenta"  required>
+      <option value="">Seleccione su Tipo de Cuenta</option>
+      <option value="Cliente">Cliente</option>
+      <option value="Instructor">Instructor</option>
+    </select>
+
+    <label for="">Tipo de identificación</label>
+    <select  name="tipodeIdentificacion" ng-model="ctrl.user.tipodeIdentificacion" required>
+      <option value="">Seleccione Tipo de identificación</option>
+      <option value="cedula">Cédula</option>
+      <option value="pasaporte">Pasaporte</option>
+      <option value="residencia">Cédula de Residencia</option>
+    </select>
+
+    <div ng-messages="frmRegUser.tipodeIdentificacion.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Profesor Asignado</label>
+    <input list="testList" type="" ng-model="SelectedInstructor" ng-change="LoadSessionData(SelectedInstructor)" />
+      <datalist id="testList">
+          <option ng-repeat="x1 in ctrl.user.tipodeCuenta" value="{{x1.Instructor}}">
+      </datalist>
+
+    <label for="">Número de Identificación:</label>
+    <input type="number" ng-model="ctrl.user.numerodeIdentificacion" name="numerodeIdentificacion" required>
+    <div ng-messages="frmRegUser.numerodeIdentificacion.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Nacionalidad</label>
+    <input type="text" ng-model="ctrl.user.nacionalidad" name="nacionalidad" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚñ]+$/">
+
+    <div ng-messages="frmRegUser.nacionalidad.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Género</label>
+    <select  name="genero" ng-model="ctrl.user.genero" required>
+      <option value="">Seleccione su Género</option>
+      <option value="femenino">Femenino</option>
+      <option value="masculino">Masculino</option>
+      <option value="indefinido">Indefinido</option>
+    </select>
+
+    <label for="">Primer Nombre:</label>
+    <input type="text" ng-model="ctrl.user.primerNombre" name="primerNombre" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ]+$/">
+
+    <div ng-messages="frmRegUser.primerNombre.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Segundo Nombre:</label>
+    <input type="text" ng-model="ctrl.user.segundoNombre" name="segundoNombre" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ]+$/">
+
+    <div ng-messages="frmRegUser.segundoNombre.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Primer Apellido:</label>
+    <input type="text" ng-model="ctrl.user.primerApellido" name="primerApellido" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ]+$/">
+
+    <div ng-messages="frmRegUser.primerApellido.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Segundo Apellido</label>
+    <input type="text" ng-model="ctrl.user.segundoApellido" name="segundoApellido" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ]+$/">
+
+    <div ng-messages="frmRegUser.segundoApellido.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+
+    <label for="">Fecha de Nacimiento</label>
+    <input type="date" ng-model="ctrl.user.fechadeNacimiento" name="fechadeNacimiento" required>
+
+    <div ng-messages="frmRegUser.fechadeNacimiento.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Edad</label>
+    <input type="number" ng-model="ctrl.user.edad" name="edad" required>
+
+    <div ng-messages="frmRegUser.edad.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+
+    <label for="">Teléfono</label>
+    <input type="number" ng-model="ctrl.user.telefono" name="telefono" required>
+
+    <div ng-messages="frmRegUser.telefono.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Contacto en Caso de Emergencia</label>
+    <input type="number" ng-model="ctrl.user.contactoenCasodeEmergencia" name="contactoenCasodeEmergencia" required>
+
+    <div ng-messages="frmRegUser.contactoenCasodeEmergencia.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Nombre de usuario:</label>
+    <input type="text" ng-model="ctrl.user.nombredeUsuario" name="nombredeUsuario" required ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/">
+
+    <div ng-messages="frmRegUser.nombredeUsuario.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+    <label for="">Estado</label>
+    <select  name="estado" ng-model="ctrl.user.estado" required>
+      <option value="">Seleccione el estado</option>
+      <option value="activo">Activo</option>
+      <option value="inactivo">Inactivo</option>
+    </select>
+
+    <label for="">Contraseña</label>
+    <input type="password" ng-model="ctrl.user.contrasenna" name="contrasenna" required>
+
+    <div ng-messages="frmRegUser.contrasenna.$error">
+      <div ng-messages-include="components/includes/messages.html"></div>
+    </div>
+
+
+    <label for="">Foto</label>
+    <input type="file" ng-model="ctrl.user.photo" name="photo" id="photo">
+
+
+
+
+
+    <button type="submit" ng-click="ctrl.reset()" ng-disabled="frmRegUser.$invalid">Register</button>
+
+    <input  type="button" value="Actualizar" ng-click="ctrl.update(user)">
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo de Cuenta</th>
+        <th>Tipo de identificación</th>
+        <th>Número de Identificación</th>
+        <th>Nacionalidad</th>
+        <th>Género</th>
+        <th>Primer Nombre</th>
+        <th>Segundo Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Edad</th>
+        <th>Teléfono</th>
+        <th>Contacto de Emergencia</th>
+        <th>Nombre de usuario</th>
+        <th>Estado</th>
+        <th>Foto</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in ctrl.users">
+          <td>{{user.tipodeCuenta}}</td>
+          <td>{{user.tipodeIdentificacion}}</td>
+          <td>{{user.numerodeIdentificacion}}</td>
+          <td>{{user.nacionalidad}}</td>
+          <td>{{user.genero}}</td>
+          <td>{{user.primerNombre}}</td>
+          <td>{{user.segundoNombre}}</td>
+          <td>{{user.primerApellido}}</td>
+          <td>{{user.segundoApellido}}</td>
+          <td>{{user.fechadeNacimiento | date: 'yyyy-MM-dd'}}</td>
+          <td>{{user.edad}}</td>
+          <td>{{user.telefono}}</td>
+          <td>{{user.contactoenCasodeEmergencia}}</td>
+          <td>{{user.nombredeUsuario}}</td>
+          <td>{{user.estado}}</td>
+          <td><img ng-src="{{user.photo}}" alt="Description" width="132px" height="170px" /></td>
+
+
+
+
+          <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
+
+      </tr>
+    </tbody>
+  </table>
+</section>
