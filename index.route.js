@@ -89,7 +89,7 @@
           }]
         },
         controller: 'administradorController',
-        controllerAs:'userCtrl'
+        controllerAs:'ctrl'
       })
 
 

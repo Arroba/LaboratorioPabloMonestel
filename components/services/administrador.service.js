@@ -1,9 +1,9 @@
 (function(){
   angular
   .module('myApp')
-  .service('userService', userService);
+  .service('administradorService', administradorService);
 
-  function userService(){
+  function administradorService(){
     var users = [];
     var publicAPI = {
       setUsers : _setUsers,
