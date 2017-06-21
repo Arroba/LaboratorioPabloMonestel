@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .factory('UserService', UserService);
 
     UserService.$inject = ['$http'];

@@ -1,7 +1,7 @@
 ﻿(function(){
     'use strict';
     angular
-    .module('myApp')
+    .module('gymApp')
     .controller('LoginController', LoginController);
 
     LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService'];
@@ -9,7 +9,7 @@
 
     function LoginController($location, AuthenticationService, FlashService,UserService){
         var vm = this;
-        
+
         //Funcion que valida los datos de inicio de sesion y setea los estados
         vm.login = function(){
           vm.dataLoading = true;

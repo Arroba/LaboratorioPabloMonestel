@@ -1,6 +1,7 @@
 (function(){
+  'use strict';
   angular
-    .module('myApp')
+    .module('gymApp')
     .controller('citaController', citaController);
     function citaController(citaService){
 
@@ -8,6 +9,7 @@
 
       function init(){
         citaCtrl.citas = citaService.getCitas();
+        
       }init();
 
       citaCtrl.save= function(){
@@ -17,7 +19,7 @@
           descripcion: citaCtrl.descripcion,
           fecha: citaCtrl.fecha,
           hora: citaCtrl.hora,
-          estado: 'en Revision'
+          estado: 'En Revisión'
         }
 
         citaService.setCitas(newCita);
@@ -45,22 +47,24 @@
         var listaUsuarios = citaService.getCitas();
           for (var i = 0; i < listaUsuarios.length; i++) {
             if (listaUsuarios[i].id == cita.id) {
-              listaUsuarios[i].estado = 'aprobadas';
+              listaUsuarios[i].estado = 'Aprobada';
               console.log(listaUsuarios[i].estado)
             }// Cierre del if
           }// Cierre del ciclo
-        citaService.setCitas(listaUsuarios);
+        citaService.updateState(listaUsuarios);
+        init();
       }// Cierre de la funcion aprobación
 
       citaCtrl.remover = function(cita){
         var listaUsuarios = citaService.getCitas();
         for (var i = 0; i < listaUsuarios.length; i++) {
           if (listaUsuarios[i].id == cita.id) {
-            listaUsuarios[i].estado = 'rechazadas';
+            listaUsuarios[i].estado = 'Rechazada';
             console.log(listaUsuarios[i].estado)
           }// Cierre del if
         }// Cierre del ciclo
-      citaService.setCitas(listaUsuarios);
+      citaService.updateState(listaUsuarios);
+      init();
       }// Cierre de la funcion aprobación
 
 
