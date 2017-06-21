@@ -16,13 +16,14 @@
       }init();
 
 
-      // Función que envía los datos para ser guardados al service
+      // Inicio de función que envía los datos para ser guardados al service
       userCtrl.save= function(pNewUser){
         userService.setUsers(pNewUser);
         userCtrl.user = {};
         init();
         limpiar();
       }
+      // Fin de función que envía los datos para ser guardados al service
 
 
       // Función de obtener datos del usuario
