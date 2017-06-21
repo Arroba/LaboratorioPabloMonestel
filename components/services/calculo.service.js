@@ -13,14 +13,12 @@
     };
     return publicAPI;
 
-
     // Función de registar datos del usuario
     function _setUsers(pUser){
       var usersList = _getUsers();
       usersList.push(pUser);
       localStorage.setItem('lsUsersList', JSON.stringify(usersList));
     }
-
 
     // Función de obtener datos actualizados
     function _getUsers(){
@@ -30,7 +28,6 @@
       }
       return usersList;
     }
-
 
     //Función de permitir cambios editados, si, solo si la identificación es la misma
     function _updateUser(pobjUsuario){
@@ -42,7 +39,6 @@
       }
       localStorage.setItem('lsUsersList', JSON.stringify(usersList));
     }
-
 
   //   function _porcentajeGrasaSubCutanea(){
   //     var usersList = _getUsers();
@@ -70,6 +66,5 @@
   //   return nPorcentajeGrasa;
   //   localStorage.setItem('lsUsersList', JSON.stringify(usersList));
   // }
-
-}
+  }
 })();

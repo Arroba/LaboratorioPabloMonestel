@@ -18,11 +18,11 @@
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function () {
+            $timeout(function (){
                 var response;
                 UserService.GetByUsername(username)
-                    .then(function (user) {
-                        if (user !== null && user.password === password) {
+                    .then(function (user){
+                        if (user !== null && user.password === password){
                             response = { success: true };
                         } else {
                             response = { success: false, message: 'Username or password is incorrect' };
@@ -37,7 +37,6 @@
             //    .success(function (response) {
             //        callback(response);
             //    });
-
         }
 
         function SetCredentials(username, password) {
@@ -147,5 +146,4 @@
             return output;
         }
     };
-
 })();
