@@ -62,7 +62,7 @@
       // Fin de función de obtener datos del usuario
 
 
-      // Función de obtener datos para ser editados
+      // Inicio de función de obtener datos para ser editados
       userCtrl.update = function(){
         var usuarioEditado = {
           id : userCtrl.user.id,
@@ -100,13 +100,15 @@
         init();
         limpiar();
       }
+      // Fin de función de obtener datos para ser editados
 
 
-      // Función de limpiar datos después de registar
+      // Inicio de función de limpiar datos después de registar
       function limpiar(){
         userCtrl.user={};
       }
-
+      // Fin de función de limpiar datos después de registar
+      
 
       // Función de calcular el índice de masa corporal(IMC)
       function calculoIMC(){
