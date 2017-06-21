@@ -1,0 +1,95 @@
+<section >
+
+      <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 center">
+        <h1 >Control y Registro de Citas</h1>
+      </div>
+
+      <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" id="border">
+      </div>
+
+
+      <form name="frmControlCitas" class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 form" novalidate autocomplete="off">
+
+
+
+        <div class="form-group">
+          <label for="">Cédula del Usuario:</label>
+          <input type="text" name="id" ng-model="ctrl.id" class="form-control" ng-minlength="7" ng-maxlength="9" required>
+          <div ng-messages="frmControlCitas.id.$error">
+            <div ng-messages-include="components/includes/messages.html"></div>
+          </div>
+        </div>
+
+<!--ng-model enlaza al objeto con el valor del input por ejemplo userCtrl.name está llamado por un ng-model  -->
+
+        <div class="form-group">
+          <label for="">Descripción:</label>
+          <input type="text" name="descripcion" ng-model="ctrl.descripcion" class="form-control" required>
+          <div ng-messages="frmControlCitas.descripcion.$error">
+            <div ng-messages-include="components/includes/messages.html"></div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="">Fecha</label>
+          <input type="date" name="fecha" ng-model="ctrl.fecha" class="form-control" required>
+          <div ng-messages="frmControlCitas.fecha.$error">
+            <div ng-messages-include="components/includes/messages.html"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Hora</label>
+          <input type="time" name="hora" ng-model="ctrl.hora" class="form-control" required>
+          <div ng-messages="frmControlCitas.hora.$error">
+            <div ng-messages-include="components/includes/messages.html"></div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <input class=" btn-warning col-xs-12  col-sm-12  col-md-12" id="submit" type="submit" value="Crear" ng-click=ctrl.save(cita) ng-disabled="frmControlCitas.$invalid">
+        </div>
+      </form>
+      <br>
+      <br>
+
+
+
+
+      <table class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 " id="tblRegistro">
+
+        <thead class="row"id="tblRegistro">
+          <select ng-model="ctrl.estadoFiltro" class="col-xs-3 col-xs-offset-2" name="estadoFiltro">
+            <option value="">--Seleccione un estado--</option>
+            <option value="En Revisión">En Revisión</option>
+            <option value="Aprobada">Aprobadas</option>
+            <option value="Rechazada">Rechazadas</option>
+          </select>
+          <tr>
+            <th class="col-xs-2 text-center">Cédula</th>
+            <th class="col-xs-2 text-center">Descripción</th>
+            <th class="col-xs-2 text-center">Fecha</th>
+            <th class="col-xs-2 text-center">Hora</th>
+            <th class="col-xs-2 text-center">Estado</th>
+
+          </tr>
+        </thead>
+        <br>
+        <br>
+        <tbody>
+          <tr ng-repeat="cita in ctrl.citas | filter:{estado:ctrl.estadoFiltro}"  id="info">
+            <td class="col-xs-2">{{cita.id}}</td>
+            <td class="col-xs-2">{{cita.descripcion}}</td>
+            <td class="col-xs-2">{{cita.fecha | date: 'dd-MM-yyyy'}}</td>
+            <td class="col-xs-2">{{cita.hora | date:'shortTime'}}</td>
+            <td class="col-xs-2">{{cita.estado}}</td>
+
+            <td><input class="btn btn-warning table" type="submit" value="Aceptar" ng-click="ctrl.aprobacion(cita)" ></td>
+            <td><input class="btn btn-warning table" type="submit" value="Rechazar" ng-click="ctrl.remover(cita)"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
