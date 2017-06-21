@@ -1,5 +1,5 @@
 (function(){
-  'use strict';
+  
   angular
   .module('gymRoutes', ['ui.router', 'oc.lazyLoad', 'angularCSS'])
   .config(configuration)
