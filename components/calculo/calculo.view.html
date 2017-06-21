@@ -225,85 +225,84 @@
 
       </div>
     </form>
-    
-  <h2>Mostrar información por fecha</h2>
-  <hr>
+
+    <h2>Mostrar información por fecha</h2>
+    <hr>
 
 
-  <input ng-model="from" name="from" type="date"/>
-  <input ng-model="ctrl.to" name="to" type="date"/>
+    <input ng-model="from" name="from" type="date"/>
+    <input ng-model="ctrl.to" name="to" type="date"/>
 
+    <table class="table table-responsive ">
+      <thead>
+        <tr>
+          <th>Identificación</th>
+          <th>Fecha</th>
+          <th>Peso</th>
+          <th>Estatura</th>
+          <th>Resultado de IMC</th>
+          <th>Bícep izquierdo</th>
+          <th>Bícep derecho</th>
+          <th>Bícep contraído izquierdo</th>
+          <th>Bícep contraído derecho</th>
+          <th>Pantorrilla izquierda</th>
+          <th>Pantorrilla derecha</th>
+          <th>Muslo izquierdo</th>
+          <th>Muslo derecho</th>
+          <th>Cintura</th>
+          <th>Abdomen</th>
+          <th>Cadera</th>
+          <th>Pecho</th>
+          <th>Espalda</th>
+          <th>Tríceps izquierda</th>
+          <th>Tríceps derecho</th>
+          <th>Subescapular derecho</th>
+          <th>Subescapular izquierdo</th>
+          <th>Supraespinal derecho</th>
+          <th>Supraespinal izquierdo</th>
+          <th>Abdominal derecho</th>
+          <th>Abdominal izquierdo</th>
+          <th>Muslo izquierdo</th>
+          <th>Muslo derecho</th>
+          <th>Pantorrilla izquierda</th>
+          <th>Pantorrilla derecha</th>
+        </tr>
+      </thead>
 
-  <table class="table-responsive table-condensed">
-    <thead>
-      <tr>
-        <th>Identificación</th>
-        <th>Fecha</th>
-        <th>Peso</th>
-        <th>Estatura</th>
-        <th>Resultado de IMC</th>
-        <th>Bícep izquierdo</th>
-        <th>Bícep derecho</th>
-        <th>Bícep contraído izquierdo</th>
-        <th>Bícep contraído derecho</th>
-        <th>Pantorrilla izquierda</th>
-        <th>Pantorrilla derecha</th>
-        <th>Muslo izquierdo</th>
-        <th>Muslo derecho</th>
-        <th>Cintura</th>
-        <th>Abdomen</th>
-        <th>Cadera</th>
-        <th>Pecho</th>
-        <th>Espalda</th>
-        <th>Tríceps izquierda</th>
-        <th>Tríceps derecho</th>
-        <th>Subescapular derecho</th>
-        <th>Subescapular izquierdo</th>
-        <th>Supraespinal derecho</th>
-        <th>Supraespinal izquierdo</th>
-        <th>Abdominal derecho</th>
-        <th>Abdominal izquierdo</th>
-        <th>Muslo izquierdo</th>
-        <th>Muslo derecho</th>
-        <th>Pantorrilla izquierda</th>
-        <th>Pantorrilla derecha</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr ng-repeat="user in ctrl.users | dateRange:from:ctrl.to">
-          <td>{{user.id}}</td>
-          <td>{{user.fecha | date:'yyyy-MM-dd'}}</td>
-          <td>{{user.peso}} kg</td>
-          <td>{{user.estatura}} m</td>
-          <td>{{user.peso / (user.estatura * user.estatura) | number}}</td>
-          <td>{{user.bicepIzquierdo}}</td>
-          <td>{{user.bicepDerecho}}</td>
-          <td>{{user.bicepContraidoIzq}}</td>
-          <td>{{user.bicepContraidoDer}}</td>
-          <td>{{user.pantorrillaIzq}}</td>
-          <td>{{user.pantorrillaDer}}</td>
-          <td>{{user.musloIzq}}</td>
-          <td>{{user.musloDer}}</td>
-          <td>{{user.cintura}}</td>
-          <td>{{user.abdomen}}</td>
-          <td>{{user.cadera}}</td>
-          <td>{{user.pecho}}</td>
-          <td>{{user.espalda}}</td>
-          <td>{{user.tricepIzq}}</td>
-          <td>{{user.tricepDer}}</td>
-          <td>{{user.subescapularIzq}}</td>
-          <td>{{user.subescapularDer}}</td>
-          <td>{{user.supraespinalIzq}}</td>
-          <td>{{user.supraespinalDer}}</td>
-          <td>{{user.abdominalIzq}}</td>
-          <td>{{user.abdominalDer}}</td>
-          <td>{{user.musloIzqPliegue}}</td>
-          <td>{{user.musloDerPliegue}}</td>
-          <td>{{user.pantorrillaIzqPliegue}}</td>
-          <td>{{user.pantorrillaIzqPliegue}}</td>
-          <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+      <tbody>
+        <tr ng-repeat="user in ctrl.users | dateRange:from:ctrl.to">
+            <td>{{user.id}}</td>
+            <td>{{user.fecha | date:'yyyy-MM-dd'}}</td>
+            <td>{{user.peso}} kg</td>
+            <td>{{user.estatura}} m</td>
+            <td>{{user.peso / (user.estatura * user.estatura) | number}}</td>
+            <td>{{user.bicepIzquierdo}}</td>
+            <td>{{user.bicepDerecho}}</td>
+            <td>{{user.bicepContraidoIzq}}</td>
+            <td>{{user.bicepContraidoDer}}</td>
+            <td>{{user.pantorrillaIzq}}</td>
+            <td>{{user.pantorrillaDer}}</td>
+            <td>{{user.musloIzq}}</td>
+            <td>{{user.musloDer}}</td>
+            <td>{{user.cintura}}</td>
+            <td>{{user.abdomen}}</td>
+            <td>{{user.cadera}}</td>
+            <td>{{user.pecho}}</td>
+            <td>{{user.espalda}}</td>
+            <td>{{user.tricepIzq}}</td>
+            <td>{{user.tricepDer}}</td>
+            <td>{{user.subescapularIzq}}</td>
+            <td>{{user.subescapularDer}}</td>
+            <td>{{user.supraespinalIzq}}</td>
+            <td>{{user.supraespinalDer}}</td>
+            <td>{{user.abdominalIzq}}</td>
+            <td>{{user.abdominalDer}}</td>
+            <td>{{user.musloIzqPliegue}}</td>
+            <td>{{user.musloDerPliegue}}</td>
+            <td>{{user.pantorrillaIzqPliegue}}</td>
+            <td>{{user.pantorrillaIzqPliegue}}</td>
+            <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
