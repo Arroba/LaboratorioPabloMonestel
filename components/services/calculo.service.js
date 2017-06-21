@@ -23,7 +23,7 @@
     // Fin de función de registar datos del usuario
 
 
-    // Función de obtener datos actualizados
+    // Inicio de función de obtener datos actualizados
     function _getUsers(){
       var usersList = JSON.parse(localStorage.getItem('lsUsersList'));
       if(usersList == null){
@@ -31,7 +31,8 @@
       }
       return usersList;
     }
-
+    // Fin de función de obtener datos actualizados
+    
 
     //Función de permitir cambios editados, si, solo si la identificación es la misma
     function _updateUser(pobjUsuario){
