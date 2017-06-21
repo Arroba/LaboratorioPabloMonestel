@@ -108,9 +108,9 @@
         userCtrl.user={};
       }
       // Fin de función de limpiar datos después de registar
-      
 
-      // Función de calcular el índice de masa corporal(IMC)
+
+      // Inicio de función de calcular el índice de masa corporal(IMC)
       function calculoIMC(){
         var listaUsuarios = userService.getUsers();
         var sSituacion = '';
@@ -145,7 +145,7 @@
           console.log(sSituacion);
         }
       }
-
+    // Fin de función de calcular el índice de masa corporal(IMC)
 
     }//cierre de funcion userCtrl
 })();
