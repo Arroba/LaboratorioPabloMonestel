@@ -21,6 +21,7 @@
       localStorage.setItem('lsUsersList', JSON.stringify(usersList));
     }
 
+
     function _getUsers(){
       var usersList = JSON.parse(localStorage.getItem('lsUsersList'));
       if(usersList == null){
@@ -28,6 +29,8 @@
       }
       return usersList;
     }
+
+
     function _updateUser(pobjUsuario){
       var usersList = _getUsers();
       for(var i = 0; i < usersList.length; i++){
