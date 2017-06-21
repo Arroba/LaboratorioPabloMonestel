@@ -68,7 +68,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <label for="">Fecha de Nacimiento</label>
     <input class="form-control" type="date" ng-model="ctrl.user.fechadeNacimiento" name="fechadeNacimiento" required>
 
@@ -82,7 +81,6 @@
     <div ng-messages="frmRegUser.edad.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
-
 
     <label for="">Teléfono</label>
     <input class="form-control" type="number" ng-model="ctrl.user.telefono" name="telefono" required>
@@ -137,7 +135,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
 =======
     <input class="form-control" type="file" ng-model="ctrl.user.photo" name="photo" id="photo">
     <br>
@@ -145,7 +142,6 @@
     <button type="submit" ng-click="ctrl.reset()" ng-disabled="frmRegUser.$invalid">Register</button>
     <input  type="button" value="Actualizar" ng-click="ctrl.update(user)">
   </form>
-
 
   <table class="table table-striped">
     <thead>
@@ -166,8 +162,6 @@
         <th>Nombre de usuario</th>
         <th>Estado</th>
         <th>Foto</th>
-
-
       </tr>
     </thead>
     <tbody>
@@ -189,7 +183,6 @@
           <td>{{user.estado}}</td>
           <td><img ng-src="{{user.photo}}" alt="Description" width="132px" height="170px" /></td>
           <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
-
       </tr>
     </tbody>
   </table>
