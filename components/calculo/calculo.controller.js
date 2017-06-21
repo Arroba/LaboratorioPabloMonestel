@@ -26,7 +26,7 @@
       // Fin de función que envía los datos para ser guardados al service
 
 
-      // Función de obtener datos del usuario
+      // Inicio de función de obtener datos del usuario
       userCtrl.getInfo = function(puser){
         userCtrl.user.id = puser.id;
         userCtrl.user.fecha = new Date(puser.fecha);
@@ -59,6 +59,7 @@
         userCtrl.user.pantorrillaIzqPliegue = puser.pantorrillaIzqPliegue;
         userCtrl.user.pantorrillaDerPliegue = puser.pantorrillaDerPliegue;
       }
+      // Fin de función de obtener datos del usuario
 
 
       // Función de obtener datos para ser editados
