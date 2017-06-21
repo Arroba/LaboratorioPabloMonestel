@@ -17,7 +17,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <h2>Cálculo IMC</h2>
     <hr>
 
@@ -45,7 +44,6 @@
       <div ng-messages="frmRegMedicion.bicepDerecho.$error">
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>
-
 
       <label class="col-xs-4" for="">Bíceps contraído:</label>
       <input class="col-xs-4" type="number" ng-model="ctrl.user.bicepContraidoIzq" name="bicepContraidoIzq" placeholder="Izquierdo" min="1" required>
@@ -80,7 +78,6 @@
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>
 
-
       <label class="col-xs-4" for="">Cintura:</label>
       <input class="col-xs-8" type="number" ng-model="ctrl.user.cintura" name="cintura" min="1" required>
       <div ng-messages="frmRegMedicion.cintura.$error">
@@ -106,14 +103,12 @@
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>
 
-
       <label class="col-xs-4" for="">Espalda:</label>
       <input class="col-xs-8" type="number" ng-model="ctrl.user.espalda" name="espalda" min="1" required>
       <div ng-messages="frmRegMedicion.espalda.$error">
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>
     </div>
-
 
     <h2>Pliegues(mm)</h2>
     <hr>
@@ -129,7 +124,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <label class="col-xs-4" for="">Subescapular:</label>
     <input class="col-xs-4" type="number" ng-model="ctrl.user.subescapularIzq" name="subescapularIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.subescapularIzq.$error">
@@ -140,8 +134,6 @@
     <div ng-messages="frmRegMedicion.subescapularDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
-
-
 
     <label class="col-xs-4" for="">Supraespinal:</label>
     <input class="col-xs-4" type="number" ng-model="ctrl.user.supraespinalIzq" name="supraespinalIzq" min="1" placeholder="Izquierdo"  required>
@@ -154,7 +146,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <label class="col-xs-4" for="">Abdominal:</label>
     <input class="col-xs-4" type="number" ng-model="ctrl.user.abdominalIzq" name="abdominalIzq" min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.abdominalIzq.$error">
@@ -165,7 +156,6 @@
     <div ng-messages="frmRegMedicion.abdominalDer.$error">
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
-
 
     <label class="col-xs-4" for="">Muslo:</label>
     <input class="col-xs-4" type="number" ng-model="ctrl.user.musloIzqPliegue" name="musloIzqPliegue" min="1" placeholder="Izquierdo"  required>
@@ -178,7 +168,6 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <label class="col-xs-4" for="">Pantorrilla:</label>
     <input class="col-xs-4" type="number" ng-model="ctrl.user.pantorrillaIzqPliegue" name="pantorrillaIzqPliegue"  min="1" placeholder="Izquierdo"  required>
     <div ng-messages="frmRegMedicion.pantorrillaIzqPliegue.$error">
@@ -190,20 +179,16 @@
       <div ng-messages-include="components/includes/messages.html"></div>
     </div>
 
-
     <button type="submit" ng-click="ctrl.reset()" ng-disabled="frmRegMedicion.$invalid">Registrar</button>
     <input type="button" value="Actualizar" ng-click="ctrl.update(user)">
-
 
   </form>
 
   <h2>Mostar información por fecha</h2>
   <hr>
 
-
   <input ng-model="from" name="from" type="date"/>
   <input ng-model="ctrl.to" name="to" type="date"/>
-
 
   <table>
     <thead>
