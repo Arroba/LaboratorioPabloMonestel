@@ -14,12 +14,13 @@
     return publicAPI;
 
 
-    // Función de registar datos del usuario
+    // Inicio de función de registar datos del usuario
     function _setUsers(pUser){
       var usersList = _getUsers();
       usersList.push(pUser);
       localStorage.setItem('lsUsersList', JSON.stringify(usersList));
     }
+    // Fin de función de registar datos del usuario
 
 
     // Función de obtener datos actualizados
